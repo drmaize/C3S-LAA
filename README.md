@@ -29,7 +29,7 @@ Here is an sample parameter file data:
 Sample Parameter File
 ================================================
 
-### path to required files and dependencies
+###  _path to required files and dependencies_
 amos_path = "/usr/local/amos/bin/"
 
 #directory where the consensus files will be saved
