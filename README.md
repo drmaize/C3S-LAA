@@ -107,4 +107,4 @@ C3S-LAA can be executed via Python. This requires installation of the following 
 * <a href="http://python.org/">Python 2.7</a>
 * <a href="http://www.numpy.org/">NumPy 1.9.2</a>
 * <a href="http://pandas.pydata.org/">pandas 0.18.1</a>
-* <a href="http://biopython.org/wiki/Download">BioPython 1.69</a>
+* <a href="http://biopython.org/wiki/Download">Biopython 1.69</a>
