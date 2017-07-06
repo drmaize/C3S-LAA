@@ -32,59 +32,59 @@ Sample Parameter File
 ###  _path to required files and dependencies_
 amos_path = "/usr/local/amos/bin/"
 
-#directory where the consensus files will be saved
+###  _directory where the consensus files will be saved_
 consensus_output = "./output/"
 
-#path to the primer pair info. file			
+###  _path to the primer pair info. file_			
 primer_info_file = "primer_pairs_info.txt"
 
-#path to PacBio fofn
+###  _path to PacBio fofn_
 fofn_pacbio_raw_reads = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
-#path to ccs reads
+###  _path to ccs reads_
 ccs_file_path = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
 
-### run parameters
+###  _run parameters_
 #number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
 trim_bp = 21
 
-#1: yes; 0: no
+###  _1: yes; 0: no_
 barcode_subset = 0
 
-#reads >= "min_read_length" will be searched for the presence of primer sequences
+###  _reads >= "min_read_length" will be searched for the presence of primer sequences_
 min_read_length = 0
 
-#1: filter; 0: no filter
+###  _1: filter; 0: no filter_
 min_read_len_filter = 1
 
-#searches for the primer sequence within n bases from the read terminals
+###  _searches for the primer sequence within n bases from the read terminals_
 primer_search_space = 100
 
-#barcode seq + padding seq length
+###  _barcode seq + padding seq length_
 avg_barcode_padding_length = 21
 
-#walltime for consensus calling
+###  _walltime for consensus calling_
 walltime = 190
 
-#node no./name for consensus calling
+###  _node no./name for consensus calling_
 node = "1"
 
-#no. of processors for consensus calling
+###  _no. of processors for consensus calling_
 processors = 12
 
-#consensus sequences generated from >= "no_reads_threshold" will be used for assembly
+###  _consensus sequences generated from >= "no_reads_threshold" will be used for assembly_
 no_reads_threshold = 100
 
 
-###################
+
 The reads of insert protocol in SMRT Portal should be used to generate circular consensus sequences (CCSs). “ccs_file_path” parameter indicates the path to the resulting CCS reads.The CCSs are used to cluster the data based on the presence of both the forward and reverse primer sequences for each amplicon (the pipeline considers the sense and antisense primer sequences). From this, we produce a list of CCS identifiers belonging to each primer pair cluster. This list is used to link the corresponding raw reads, using the whitelist option in LAA, to carry out Quiver based consensus calling using only the raw reads belonging to an amplicon-specific cluster. The pipeline can be used to perform one-level clustering for non-barcoded amplicon libraries or two-level clustering for barcoded amplicon libraries. Because barcodes precede the primer sequence and may vary in length, the primer search space was designed as a user input parameter, which, for this study, was set to 100 bases at both the ends of the sequence.
 
-###################
+
 C3S-LAA scripts need to be run by defining the path of the SMRT PORTAL provided by PacBio. 
 "consensus_assembly.py" requires "amos" package to be installed.
 
 
-An external file with the primer information should be provided.
+###  _An external file with the primer information should be provided_
 Here is an example format:
 f_primer_name	r_primer_name	f_primer_sequence	r_primer_sequence
 TA_1_25390617_27_F	TA_1_25395472_24_R	AAACATTGGTGTGGAAAGCAACTGAAG	AGGGTCACAGCACAGGACAGATTC
