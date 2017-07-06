@@ -97,3 +97,13 @@ Here is an example format:
     TA_3_33506037_24_F	TA_3_33509162_25_R	CAAACCGCAGAGGATAGAGATCGC	GGGTTCTCATCAACATTTGGACCTC
     TA_6_7045710_25_F	TA_6_7050495_28_R	TAGGGAGAGGTGGGAATATAATGGG	CCATCAAGTACAACAACGCATGATCATC
     TA_6_7047707_27_F	TA_6_7052049_28_R	CAGCATGCGTATAAAGAAGGCGAGCTC	CCCGATGTGCGACGCCGTAACAAATCTC
+
+
+Dependencies for C3S-LAA
+================================================
+C3S-LAA can be executed via Python. This requires installation of the following components. Other versions of these components have not been tested.
+
+* Linux/Unix
+* <a href="http://python.org/">Python 2.7</a>
+* <a href="http://www.numpy.org/">NumPy 1.9.2</a>
+* <a href="http://pandas.pydata.org/">pandas 0.18.1</a>
