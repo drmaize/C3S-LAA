@@ -104,6 +104,8 @@ Dependencies for C3S-LAA
 C3S-LAA can be executed via Python. This requires installation of the following components. Other versions of these components have not been tested.
 
 * Linux/Unix
+
+* <a href="https://github.com/PacificBiosciences/SMRT-Analysis">SMRT Portal v2.3.0</a>
 * <a href="http://python.org/">Python 2.7</a>
 * <a href="http://www.numpy.org/">NumPy 1.9.2</a>
 * <a href="http://pandas.pydata.org/">pandas 0.18.1</a>
