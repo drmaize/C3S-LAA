@@ -75,7 +75,8 @@ processors = 12
 ###  _consensus sequences generated from >= "no_reads_threshold" will be used for assembly_
 no_reads_threshold = 100
 
-
+Usage
+================================================
 
 The reads of insert protocol in SMRT Portal should be used to generate circular consensus sequences (CCSs). “ccs_file_path” parameter indicates the path to the resulting CCS reads.The CCSs are used to cluster the data based on the presence of both the forward and reverse primer sequences for each amplicon (the pipeline considers the sense and antisense primer sequences). From this, we produce a list of CCS identifiers belonging to each primer pair cluster. This list is used to link the corresponding raw reads, using the whitelist option in LAA, to carry out Quiver based consensus calling using only the raw reads belonging to an amplicon-specific cluster. The pipeline can be used to perform one-level clustering for non-barcoded amplicon libraries or two-level clustering for barcoded amplicon libraries. Because barcodes precede the primer sequence and may vary in length, the primer search space was designed as a user input parameter, which, for this study, was set to 100 bases at both the ends of the sequence.
 
