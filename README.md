@@ -10,7 +10,7 @@ To improve and extend the functionality of the long amplicon analysis (LAA) modu
 Licensing and Availability
 ================================================
 C3S-LAA is released under an MIT open source license.
-The source code is available on GitHub: https://github.com/drmaize/C3S-laa
+The source code is available on GitHub: https://github.com/drmaize/C3S-LAA
 
 
 Each component of C3S-LAA needs to be run separately, in the following order:
