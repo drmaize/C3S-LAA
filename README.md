@@ -29,51 +29,51 @@ Here is an sample parameter file data:
 Sample Parameter File
 ================================================
 
-    ###  _path to required files and dependencies_
+    ### path to required files and dependencies
     amos_path = "/usr/local/amos/bin/"
 
-###  _directory where the consensus files will be saved_
-consensus_output = "./output/"
+    ### directory where the consensus files will be saved
+    consensus_output = "./output/"
 
-###  _path to the primer pair info. file_			
-primer_info_file = "primer_pairs_info.txt"
+    ### path to the primer pair info. file
+    primer_info_file = "primer_pairs_info.txt"
 
-###  _path to PacBio fofn_
-fofn_pacbio_raw_reads = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
+    ### path to PacBio fofn
+    fofn_pacbio_raw_reads = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
-###  _path to ccs reads_
-ccs_file_path = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
+    ### path to ccs reads
+    ccs_file_path = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
 
-###  _run parameters_
-#number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
-trim_bp = 21
+    ### run parameters
+    #number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
+    trim_bp = 21
 
-###  _1: yes; 0: no_
-barcode_subset = 0
+    ### 1: yes; 0: no
+    barcode_subset = 0
 
-###  _reads >= "min_read_length" will be searched for the presence of primer sequences_
-min_read_length = 0
+    ### reads >= "min_read_length" will be searched for the presence of primer sequences
+    min_read_length = 0
 
-###  _1: filter; 0: no filter_
-min_read_len_filter = 1
+    ### 1: filter; 0: no filter
+    min_read_len_filter = 1
 
-###  _searches for the primer sequence within n bases from the read terminals_
-primer_search_space = 100
+    ### searches for the primer sequence within n bases from the read terminals
+    primer_search_space = 100
 
-###  _barcode seq + padding seq length_
-avg_barcode_padding_length = 21
+    ### barcode seq + padding seq length
+    avg_barcode_padding_length = 21
 
-###  _walltime for consensus calling_
-walltime = 190
+    ### walltime for consensus calling
+    walltime = 190
 
-###  _node no./name for consensus calling_
-node = "1"
+    ### node no./name for consensus calling
+    node = "1"
 
-###  _no. of processors for consensus calling_
-processors = 12
+    ### no. of processors for consensus calling
+    processors = 12
 
-###  _consensus sequences generated from >= "no_reads_threshold" will be used for assembly_
-no_reads_threshold = 100
+    ### consensus sequences generated from >= "no_reads_threshold" will be used for assembly
+    no_reads_threshold = 100
 
 Usage
 ================================================
