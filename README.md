@@ -88,7 +88,7 @@ C3S-LAA scripts need to be run by defining the path of the SMRT PORTAL provided 
 ###  _An external file with the primer information should be provided_
 Here is an example format:
 
-    f_primer_name	        r_primer_name	        f_primer_sequence	            r_primer_sequence
+    f_primer_name	        r_primer_name	        f_primer_sequence	        r_primer_sequence
     TA_1_25390617_27_F	TA_1_25395472_24_R	AAACATTGGTGTGGAAAGCAACTGAAG	AGGGTCACAGCACAGGACAGATTC
     TA_1_25391952_24_F	TA_1_25396540_27_R	AGGGACAACGTAGGGAGCCTTTGG	CGTCGACCACCGAATCAAGCAAGCATG
     TA_2_37562840_25_F	TA_2_37567441_24_R	GGGTGTTGTTCGGTCACCTCCTTTG	ATCCTTTGAGTGACTGAGGGTGTG
