@@ -29,8 +29,8 @@ Here is an sample parameter file data:
 Sample Parameter File
 ================================================
 
-###  _path to required files and dependencies_
-amos_path = "/usr/local/amos/bin/"
+    ###  _path to required files and dependencies_
+    amos_path = "/usr/local/amos/bin/"
 
 ###  _directory where the consensus files will be saved_
 consensus_output = "./output/"
