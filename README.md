@@ -103,7 +103,8 @@ Here is an example format:
     CML228_BC.F1	CTATACATGACTCTGC	CML228_BC.R3	GAGAGACGATCACATA
     CML247_BC.F1	CTATACATGACTCTGC	CML247_BC.R4	CTGATATGTAGTCGTA
 
-
+###  _When multiple lanes of sequence data are available_
+A custom file of file names (fofn) as a .txt file, containing the absolute path and file names of the raw reads should be made available. This should be depicted in the "fofn_pacbio_raw_reads" option in the parameters.py file.
 
 Dependencies for C3S-LAA
 ================================================
