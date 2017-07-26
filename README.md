@@ -91,6 +91,18 @@ Here is an example format:
     TA_6_7045710_25_F	TA_6_7050495_28_R	TAGGGAGAGGTGGGAATATAATGGG	CCATCAAGTACAACAACGCATGATCATC
     TA_6_7047707_27_F	TA_6_7052049_28_R	CAGCATGCGTATAAAGAAGGCGAGCTC	CCCGATGTGCGACGCCGTAACAAATCTC
 
+The primers should be named according to the following naming convention (Name_Chromosome_StartPos_Length_Direction)
+
+
+###  _An external file with the barcode information may optionally be provided_
+Here is an example format:
+    f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
+    B97_BC.F1	CTATACATGACTCTGC	B97_BC.R1	GCAGAGTCATGTATAG
+    CML103_BC.F1	CTATACATGACTCTGC	CML103_BC.R2	CATGTACTGATACACA
+    CML228_BC.F1	CTATACATGACTCTGC	CML228_BC.R3	GAGAGACGATCACATA
+    CML247_BC.F1	CTATACATGACTCTGC	CML247_BC.R4	CTGATATGTAGTCGTA
+
+
 
 Dependencies for C3S-LAA
 ================================================
