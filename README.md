@@ -95,11 +95,7 @@ The primers should be named according to the following naming convention (Name_C
 
 
 ###  _An external file with the barcode information may optionally be provided_
-Here is an example format:
-    f_barcode_name	        f_barcode_sequence	        r_barcode_name	        r_barcode_sequence
-    B97_BC.F1	CTATACATGACTCTGC	B97_BC.R1	GCAGAGTCATGTATAG
-    CML103_BC.F1	CTATACATGACTCTGC	CML103_BC.R2	CATGTACTGATACACA
-    
+Here is an example format:   
     
     f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
     B97_BC.F1	CTATACATGACTCTGC	B97_BC.R1	GCAGAGTCATGTATAG
