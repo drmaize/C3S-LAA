@@ -94,7 +94,7 @@ Here is an example format:
 The primers should be named according to the following naming convention (Name_Chromosome_StartPos_Length_Direction)
 
 
-###  _An external file with the barcode information may optionally be provided_
+###  _An external file with the barcode information (barcode_pairs_info.txt) may optionally be provided_
 Here is an example format:   
     
     f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
