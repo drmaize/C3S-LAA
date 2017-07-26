@@ -107,6 +107,7 @@ Here is an example format:
 A custom file of file names (fofn) as a .txt file, containing the absolute path and file names of the raw reads should be made available. This should be depicted in the "fofn_pacbio_raw_reads" option in the parameters.py file.
 
 Here is an example of the contents of the fofn.txt file:
+
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.1.bax.h5
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.2.bax.h5
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.3.bax.h5
