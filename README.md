@@ -64,7 +64,7 @@ User input parameters need to be written by modifying the parameters.py file. He
     fofn = "/path/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
     ### path to ccs reads
-    ccs = "/path/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
+    ccs = "/path/reads_of_insert.fasta"
     
     ### directory where the consensus files will be saved
     consensus_output = "./output/"
