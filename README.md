@@ -38,10 +38,6 @@ Parameters
 User input parameters need to be written by modifying the parameters.py file
 Here is an sample parameter file data:
 
-
-Sample Parameter File
-================================================
-
     ### User input parameters for C3S-LAA
     
     ### Required dependencies and input files
