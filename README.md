@@ -46,8 +46,7 @@ This script first generates a multi-fasta file (merged_reads.fasta) containing t
 <h1 id="parameters">
 Parameters
 </h1>
-User input parameters need to be written by modifying the parameters.py file
-Here is an sample parameter file data:
+User input parameters need to be written by modifying the parameters.py file. Here is an sample parameter file data:
 
     ### User input parameters for C3S-LAA
     
