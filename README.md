@@ -13,7 +13,7 @@ Usage
 The reads of insert protocol in SMRT Portal should be used to generate CCSs. 
 
 2) Set up the parameter file
-The required dependencies and input files along with the output directory need to be specified. “ccs” parameter indicates the path to the resulting CCS reads. This is followed by the various C3S-LAA parameters and torque script settings for running consensus_calling.sh. Further details regarding each of these parameters are given under the <a href="#parameters">Parameters</a>. section below.
+The required dependencies and input files along with the output directory need to be specified. “ccs” parameter indicates the path to the resulting CCS reads. This is followed by the various C3S-LAA parameters and torque script settings for running consensus_calling.sh. Further details regarding each of these parameters are given under the <a href="#parameters">Parameters</a> section below.
 
 3) Command 1
 
