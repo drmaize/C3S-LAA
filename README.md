@@ -26,7 +26,10 @@ Here is an sample parameter file data:
 Sample Parameter File
 ================================================
 
-    ### path to required files and dependencies
+    ### User input parameters for C3S-LAA
+    
+    ### Required dependencies and input files
+    # Path for the AMOS package that contains minimus assembler
     amos_path = "/usr/local/amos/bin/"
 
     ### directory where the consensus files will be saved
