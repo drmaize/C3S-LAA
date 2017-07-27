@@ -105,9 +105,12 @@ User input parameters need to be written by modifying the parameters.py file. He
 
 
 C3S-LAA scripts need to be run by defining the path of the SMRT PORTAL provided by PacBio. 
+
 "consensus_assembly.py" requires "amos" package to be installed.
 
 
+Sample external files required
+================================================
 ###  _An external file with the primer information should be provided_
 Here is an example format:
 
