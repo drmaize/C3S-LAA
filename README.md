@@ -54,19 +54,19 @@ User input parameters need to be written by modifying the parameters.py file. He
     # Path for the AMOS package that contains minimus assembler
     amos_path = "/usr/local/amos/bin/"
 
-    ### directory where the consensus files will be saved
-    consensus_output = "./output/"
-
     ### path to the primer pair info. file
     primer_info_file = "primer_pairs_info.txt"
 
     ### path to PacBio fofn
-    fofn_pacbio_raw_reads = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
+    fofn = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
     ### path to ccs reads
-    ccs_file_path = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
-
-    ### run parameters
+    ccs = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
+    
+    ### directory where the consensus files will be saved
+    consensus_output = "./output/"
+    
+    ### C3S-LAA parameters
     #number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
     trim_bp = 21
 
@@ -82,8 +82,13 @@ User input parameters need to be written by modifying the parameters.py file. He
     ### searches for the primer sequence within n bases from the read terminals
     primer_search_space = 100
 
-    ### barcode seq + padding seq length
-    avg_barcode_padding_length = 21
+    ### Maximum barcode seq length
+    max_barcode_length = 0
+
+    ### Maximum padding seq length
+    max_padding_length = 5
+
+    ### torque script settings
 
     ### walltime for consensus calling
     walltime = 190
