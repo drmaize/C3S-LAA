@@ -60,7 +60,7 @@ User input parameters need to be written by modifying the parameters.py file. He
     ### path to the barcode info. file
     barcode_info_file = "barcode_pairs_info.txt"
     
-    ### path to PacBio fofn
+    ### path to PacBio file of file names (fofn) directing to the raw reads
     fofn = "/path/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
     ### path to ccs reads
@@ -142,12 +142,14 @@ Here is an example format:
 ###  _When multiple lanes of sequence data are available_
 A custom file of file names (fofn) as a .txt file, containing the absolute path and file names of the raw reads should be made available. This should be depicted in the "fofn_pacbio_raw_reads" option in the parameters.py file.
 
-Here is an example of the contents of the fofn.txt file:
+Here is an example of the contents of the fofn.txt file, where *_s1_p0.*.bax.h5 files are from lane 1 and *_s2_p0.*.bax.h5 files are from lane 2:
 
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.1.bax.h5
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.2.bax.h5
     /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s1_p0.3.bax.h5
-
+    /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s2_p0.4.bax.h5
+    /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s2_p0.5.bax.h5
+    /absolute_path/m170410_233007_42157_c101187522550000001823244205011702_s2_p0.6.bax.h5
 
 
 Dependencies for C3S-LAA
