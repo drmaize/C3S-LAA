@@ -35,7 +35,6 @@ Based on the The CCSs are used to cluster the data based on the presence of both
 <h1 id="parameters">
 Parameters
 </h1>
-================================================
 User input parameters need to be written by modifying the parameters.py file
 Here is an sample parameter file data:
 
