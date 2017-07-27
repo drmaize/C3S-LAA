@@ -56,12 +56,15 @@ User input parameters need to be written by modifying the parameters.py file. He
 
     ### path to the primer pair info. file
     primer_info_file = "primer_pairs_info.txt"
-
+    
+    ### path to the barcode info. file
+    barcode_info_file = "barcode_pairs_info.txt"
+    
     ### path to PacBio fofn
-    fofn = "/mnt/data27/ffrancis/PacBio_sequence_files/EqPCR_raw/F03_1/Analysis_Results/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
+    fofn = "/path/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
 
     ### path to ccs reads
-    ccs = "/mnt/data27/ffrancis/PacBio_sequence_files/old/primer_pair_based_grouping/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
+    ccs = "/path/Eq_wisser_PCR-ccs-opt-smrtanalysis-userdata-jobs-020-020256-data-reads_of_insert.fasta"
     
     ### directory where the consensus files will be saved
     consensus_output = "./output/"
