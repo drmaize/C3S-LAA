@@ -9,7 +9,7 @@ To improve and extend the functionality of the long amplicon analysis (LAA) modu
 Usage
 ================================================
 
-Running CS3-LAA involves five steps. These are outlined below.
+Running C3S-LAA involves five steps. These are outlined below.
 
 ###  _1) Generate Circular Consensus Sequence (CCS) Reads_
 
