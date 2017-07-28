@@ -9,11 +9,13 @@ To improve and extend the functionality of the long amplicon analysis (LAA) modu
 Usage
 ================================================
 
-###  _1) Generate circular consensus sequences (CCSs)_
+Running CS3-LAA involves five steps. These are outlined below.
 
-The reads of insert protocol in SMRT Portal should be used to generate a fasta file containing the CCSs. 
+###  _1) Generate Circular Consensus Sequence (CCS) Reads_
 
-###  _2) Set up the parameters file_
+Run the reads of insert protocol in SMRT Portal to generate circular concensus sequence (CCS) reads. 
+
+###  _2) Set Up The Parameters File_
 
 The required dependencies and input files along with the output directory need to be specified. The parameters file is used by the cluster.py script (step 3) and includes information about the location of the Minimus assembler, the location of output from step 1 (fofn and ccs files), the location of a barcode (optional) and a primer pairs file (required), specific run parameters, and settings information for automated generation of a torque script.
 
@@ -24,74 +26,56 @@ Example of parameters.py file:
     #########################################
     
     ### Required dependencies and input files
-    # path for the AMOS package that contains minimus assembler
+      # path for the AMOS package that contains minimus assembler
     amos_path = "/usr/local/amos/bin/"
-    # path to the primer pair info. file
-    primer_info_file = "primer_pairs_info.txt"
-    # path to the barcode info. file
+      # path to the barcode info file
     barcode_info_file = "barcode_pairs_info.txt"
-    # path to PacBio file of file names (fofn) directing to the raw reads
+      # path to the primer pair info file
+    primer_info_file = "primer_pairs_info.txt"
+      # path to PacBio file of file names (fofn) directing to the raw reads
     fofn = "/path/m160901_060459_42157_c101086112550000001823264003091775_s1_p0.bas.h5"
-    # path to ccs reads
+      # path to ccs reads
     ccs = "/path/reads_of_insert.fasta"
-    # directory where the consensus files will be saved
+      # directory where the consensus files will be saved
     consensus_output = "./output/"
     
     ### C3S-LAA parameters
-    # number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
+      # number of bases corresponding to padding + barcode that need to be trimmed from the amplicon consensus
     trim_bp = 21
-    # 1: yes; 0: no
+      # 1: yes; 0: no
     barcode_subset = 0
-    # reads >= "min_read_length" will be searched for the presence of primer sequences
+      # reads >= "min_read_length" will be searched for the presence of primer sequences
     min_read_length = 0
-    # 1: filter; 0: no filter
+      # 1: filter; 0: no filter
     min_read_len_filter = 1
-    # searches for the primer sequence within n bases from the read terminals
+      # searches for the primer sequence within n bases from the read terminals
     primer_search_space = 100
-    # Maximum barcode seq length
+      # Maximum barcode seq length
     max_barcode_length = 0
-    # Maximum padding seq length
+      # Maximum padding seq length
     max_padding_length = 5
 
     ### torque script settings
-    # walltime for consensus calling
+      # walltime for consensus calling
     walltime = 190
-    # node no./name for consensus calling
+      # node no./name for consensus calling
     node = "1"
-    # no. of processors for consensus calling
+      # no. of processors for consensus calling
     processors = 12
-    # consensus sequences generated from >= "no_reads_threshold" will be used for assembly
+      # consensus sequences generated from >= "no_reads_threshold" will be used for assembly
     no_reads_threshold = 100
-
-###  _3) Command 1_
-
-        python cluster.py
     
-Based on the CCSs are used to cluster the data based on the presence of both the forward and reverse primer sequences for each amplicon (the pipeline considers the sense and antisense primer sequences). From this, we produce a list of CCS identifiers belonging to each primer pair cluster. This list is used to link the corresponding raw reads, using the whitelist option in LAA, to carry out Quiver based consensus calling using only the raw reads belonging to an amplicon-specific cluster. The pipeline can be used to perform one-level clustering for non-barcoded amplicon libraries or two-level clustering for barcoded amplicon libraries. 
+Example of barcode_info_file, barcode_pairs_info.txt (tab delimited): 
+    
+    f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
+    Sample1_BC.F1	CTATACATGACTCTGC	Sample1_BC.R1	GCAGAGTCATGTATAG
+    Sample2_BC.F1	CTATACATGACTCTGC	Sample2_BC.R2	CATGTACTGATACACA
+    Sample3_BC.F1	CTATACATGACTCTGC	Sample3_BC.R3	GAGAGACGATCACATA
+    Sample4_BC.F1	CTATACATGACTCTGC	Sample4_BC.R4	CTGATATGTAGTCGTA
 
-###  _4) Command 2_
+Example of primers_info_file, primer_pairs_info.txt (tab delimited): 
 
-        qsub consensus_calling.sh
-This shell script (consensus_calling.sh) will be generated by running "cluster.py" (from step 3). For users running this shell script as a torque submission, the standard qsub parameters are indicated at the beginning of this shell script (first 6 lines as given below), based on the user input parameters. This may be removed/modified if user decides to run this shell script locally.
-        
-        #!/bin/sh
-        #PBS -N consensus_calling
-        #PBS -r n
-        #PBS -l walltime=190:00:00
-        #PBS -l nodes=1:ppn=12
-        #PBS -d /path/
-
-###  _5) Command 3_
-
-        python consensus_assembly.py
-This script first generates a multi-fasta file (merged_reads.fasta) containing the error corrected consensus sequences from all the amplicon for a given sample. Using this multi-fasta file, the script carries out assembly to generate an output file "merged_reads_assembly.fasta" that contains the assembly results. The assembled contigs are named as >1, >2, >3 etc. within this file.
-
-Sample external files required
-================================================
-###  _An external file with the primer information should be provided_
-Here is an example format:
-
-    f_primer_name	        r_primer_name	        f_primer_sequence	        r_primer_sequence
+    f_primer_name   r_primer_name   f_primer_sequence   r_primer_sequence
     TA_1_25390617_27_F	TA_1_25395472_24_R	AAACATTGGTGTGGAAAGCAACTGAAG	AGGGTCACAGCACAGGACAGATTC
     TA_1_25391952_24_F	TA_1_25396540_27_R	AGGGACAACGTAGGGAGCCTTTGG	CGTCGACCACCGAATCAAGCAAGCATG
     TA_2_37562840_25_F	TA_2_37567441_24_R	GGGTGTTGTTCGGTCACCTCCTTTG	ATCCTTTGAGTGACTGAGGGTGTG
@@ -101,17 +85,32 @@ Here is an example format:
     TA_6_7045710_25_F	TA_6_7050495_28_R	TAGGGAGAGGTGGGAATATAATGGG	CCATCAAGTACAACAACGCATGATCATC
     TA_6_7047707_27_F	TA_6_7052049_28_R	CAGCATGCGTATAAAGAAGGCGAGCTC	CCCGATGTGCGACGCCGTAACAAATCTC
 
-The primers should be named according to the following naming convention (Name_Chromosome_StartPos_Length_Direction)
+** NOTE: The primers must be named using the following naming convention: Name_Chromosome_StartPos_Length_Direction
 
+###  _3) Run Command 1_
 
-###  _An external file with the barcode information (barcode_pairs_info.txt) may optionally be provided_
-Here is an example format:   
+        python cluster.py
     
-    f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
-    B97_BC.F1	CTATACATGACTCTGC	B97_BC.R1	GCAGAGTCATGTATAG
-    CML103_BC.F1	CTATACATGACTCTGC	CML103_BC.R2	CATGTACTGATACACA
-    CML228_BC.F1	CTATACATGACTCTGC	CML228_BC.R3	GAGAGACGATCACATA
-    CML247_BC.F1	CTATACATGACTCTGC	CML247_BC.R4	CTGATATGTAGTCGTA
+The CCS reads are used to cluster the data based on the presence of barcodes (optional) and both the forward and reverse primer sequences for each amplicon (the pipeline considers the sense and antisense primer sequences). This generates a list of CCS identifiers belonging to each primer pair cluster. The list is used to link the corresponding raw reads, using the whitelist option in LAA, to carry out Quiver-based consensus calling using only the raw reads belonging to an amplicon-specific cluster. 
+
+###  _4) Run Command 2_
+
+        qsub consensus_calling.sh
+
+This shell script (consensus_calling.sh) will be generated by running "cluster.py" (from step 3). For users running this shell script as a torque submission, the standard qsub parameters are indicated at the beginning of this shell script (first 6 lines as given below), based on the user input parameters. This may be removed/modified if user decides to run this shell script locally.
+        
+        #!/bin/sh
+        #PBS -N consensus_calling
+        #PBS -r n
+        #PBS -l walltime=190:00:00
+        #PBS -l nodes=1:ppn=12
+        #PBS -d /path/
+
+###  _5) Run Command 3_
+
+        python consensus_assembly.py
+This script first generates a multi-fasta file (merged_reads.fasta) containing the error corrected consensus sequences from all the amplicon for a given sample. Using this multi-fasta file, the script carries out assembly to generate an output file "merged_reads_assembly.fasta" that contains the assembly results. The assembled contigs are named as >1, >2, >3 etc. within this file.
+
 
 ###  _When multiple lanes of sequence data are available_
 A custom file of file names (fofn) as a .txt file, containing the absolute path and file names of the raw reads should be made available. This should be depicted in the "fofn_pacbio_raw_reads" option in the parameters.py file.
