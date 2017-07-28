@@ -15,7 +15,7 @@ Running C3S-LAA involves five steps. These are outlined below.
 
 Run the reads of insert protocol in SMRT Portal to generate circular concensus sequence (CCS) reads. 
 
-###  _2) Set Up The Parameters File, Primer Information File, and Barcode Information File (Optional), _
+###  _2) Set Up The Parameters File, Primer Information File, and Barcode Information File (Optional)_
 
 The required dependencies and input files along with the output directory need to be specified. The parameters file is used by the cluster.py script (step 3) and includes information about the location of the Minimus assembler, the location of output from step 1 (fofn and ccs files), the location of a barcode (optional) and a primer pairs file (required), specific run parameters, and settings information for automated generation of a torque script.
 
