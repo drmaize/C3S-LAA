@@ -85,7 +85,7 @@ Example of primers_info_file, primer_pairs_info.txt (tab delimited):
     TA_6_7045710_25_F	TA_6_7050495_28_R	TAGGGAGAGGTGGGAATATAATGGG	CCATCAAGTACAACAACGCATGATCATC
     TA_6_7047707_27_F	TA_6_7052049_28_R	CAGCATGCGTATAAAGAAGGCGAGCTC	CCCGATGTGCGACGCCGTAACAAATCTC
 
-** NOTE: The primers must be named using the following naming convention: Name_Chromosome_StartPos_Length_Direction
+** NOTE: The primers must be named using the following naming convention: Name_Chromosome_StartPos_PrimerLength_Direction
 
 ###  _3) Run Command 1_
 
