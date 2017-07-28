@@ -65,7 +65,7 @@ Example of parameters.py file:
       # consensus sequences generated from >= "no_reads_threshold" will be used for assembly
     no_reads_threshold = 100
     
-Example of barcode_info_file, barcode_pairs_info.txt (tab delimited): 
+Example of barcode_info_file (tab delimited text file): 
     
     f_barcode_name	f_barcode_sequence	r_barcode_name	r_barcode_sequence
     Sample1_BC.F1	CTATACATGACTCTGC	Sample1_BC.R1	GCAGAGTCATGTATAG
@@ -73,9 +73,9 @@ Example of barcode_info_file, barcode_pairs_info.txt (tab delimited):
     Sample3_BC.F1	CTATACATGACTCTGC	Sample3_BC.R3	GAGAGACGATCACATA
     Sample4_BC.F1	CTATACATGACTCTGC	Sample4_BC.R4	CTGATATGTAGTCGTA
 
-Example of primers_info_file, primer_pairs_info.txt (tab delimited): 
+Example of primers_info_file (tab delimited text file): 
 
-    f_primer_name   r_primer_name   f_primer_sequence   r_primer_sequence
+    f_primer_name       r_primer_name       f_primer_sequence       r_primer_sequence
     TA_1_25390617_27_F	TA_1_25395472_24_R	AAACATTGGTGTGGAAAGCAACTGAAG	AGGGTCACAGCACAGGACAGATTC
     TA_1_25391952_24_F	TA_1_25396540_27_R	AGGGACAACGTAGGGAGCCTTTGG	CGTCGACCACCGAATCAAGCAAGCATG
     TA_2_37562840_25_F	TA_2_37567441_24_R	GGGTGTTGTTCGGTCACCTCCTTTG	ATCCTTTGAGTGACTGAGGGTGTG
