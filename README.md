@@ -1,7 +1,9 @@
 # C3S-LAA
 Clustering of Circular Consensus Sequences (C3S) for Long Amplicon Analysis of PacBio Data
 
-A manuscript on C3S-LAA is in review for publication. A preprint is avialble via bioRXiv: https://www.biorxiv.org/content/early/2017/12/20/236893
+Francis, F., M. D. Dumas, S. Davis, R. Wisser (2018) Clustering of circular consensus sequences: accurate error correction and assembly of single molecule real-time reads from multiplexed amplicon libraries. BMC Bioinformatics 19:302. https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2293-0
+
+(Initial preprint version at bioRXiv: https://www.biorxiv.org/content/early/2017/12/20/236893)
 
 Overview of C3S-LAA 
 ================================================
